@@ -41,7 +41,7 @@ async def give_filter(client, message):
 async def next_page(bot, query):
     ident, req, key, offset = query.data.split("_")
     if int(req) not in [query.from_user.id, 0]:
-        return await query.answer("oKda", show_alert=True)
+        return await query.answer("😇 നല്ല തീരുമാനം ആയിരുന്നു പക്ഷെ നടക്കില്ല, സ്വന്തമായി സെർച്ച് ചെയ്‌ത് എടുക്കൂ.", show_alert=True)
     try:
         offset = int(offset)
     except:
@@ -91,20 +91,20 @@ async def next_page(bot, query):
         off_set = offset - 10
     if n_offset == 0:
         btn.append(
-            [InlineKeyboardButton("⏪ BACK", callback_data=f"next_{req}_{key}_{off_set}"),
-             InlineKeyboardButton(f"📃 Pages {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}",
+            [InlineKeyboardButton("⇚𝘉𝘢𝘤𝘬⇚", callback_data=f"next_{req}_{key}_{off_set}"),
+             InlineKeyboardButton(f"⌸𝘗𝘢𝘨𝘦⌸ {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}",
                                   callback_data="pages")]
         )
     elif off_set is None:
         btn.append(
-            [InlineKeyboardButton(f"🗓 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
-             InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")])
+            [InlineKeyboardButton(f"⌸𝘗𝘢𝘨𝘦⌸ {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
+             InlineKeyboardButton("⇛𝘕𝘦𝘹𝘵⇛", callback_data=f"next_{req}_{key}_{n_offset}")])
     else:
         btn.append(
             [
-                InlineKeyboardButton("⏪ BACK", callback_data=f"next_{req}_{key}_{off_set}"),
-                InlineKeyboardButton(f"🗓 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
-                InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")
+                InlineKeyboardButton("⇚𝘉𝘢𝘤𝘬⇚", callback_data=f"next_{req}_{key}_{off_set}"),
+                InlineKeyboardButton(f"⌸𝘗𝘢𝘨𝘦⌸ {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
+                InlineKeyboardButton("⇛𝘕𝘦𝘹𝘵⇛", callback_data=f"next_{req}_{key}_{n_offset}")
             ],
         )
     try:
@@ -120,7 +120,7 @@ async def next_page(bot, query):
 async def advantage_spoll_choker(bot, query):
     _, user, movie_ = query.data.split('#')
     if int(user) != 0 and query.from_user.id != int(user):
-        return await query.answer("okDa", show_alert=True)
+        return await query.answer("😇 നല്ല തീരുമാനം ആയിരുന്നു പക്ഷെ നടക്കില്ല, സ്വന്തമായി സെർച്ച് ചെയ്‌ത് എടുക്കൂ.", show_alert=True)
     if movie_ == "close_spellcheck":
         return await query.message.delete()
     movies = SPELL_CHECK.get(query.message.reply_to_message.id)
@@ -135,7 +135,8 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit('This Movie Not Found In DataBase')
+            
+       k = await query.message.edit('<b>ഈ മൂവി എന്റെ ഡാറ്റാബേസിൽ ലഭ്യമല്ല,..\n<b>══════◄••❀••►═════\n<b>𝙋𝙤𝙨𝙨𝙞𝙗𝙡𝙚 𝘾𝙖𝙪𝙨𝙚𝙨;\n<b>●𝘐𝘵 𝘮𝘢𝘺 𝘣𝘦 𝘢 𝘮𝘰𝘷𝘪𝘦 𝘵𝘩𝘢𝘵 𝘪𝘴 𝘯𝘰𝘵 𝘦𝘷𝘦𝘯 𝘳𝘦𝘭𝘦𝘢𝘴𝘦𝘥,\n<b>●𝘛𝘩𝘦 𝘮𝘰𝘷𝘪𝘦 𝘩𝘢𝘴 𝘣𝘦𝘦𝘯 𝘰𝘯𝘭𝘺 𝘳𝘦𝘭𝘦𝘢𝘴𝘦𝘥 𝘪𝘯 𝘵𝘩𝘦𝘢𝘵𝘦𝘳𝘴 𝘢𝘯𝘥 𝘯𝘰𝘵 𝘪𝘯 𝘖𝘛𝘛 𝘱𝘭𝘢𝘵𝘧𝘰𝘳𝘮𝘴,\n<b>●𝘙𝘢𝘳𝘦 𝘰𝘳 𝘝𝘦𝘳𝘺 𝘖𝘭𝘥 𝘔𝘰𝘷𝘪𝘦𝘴,\n\n<b>𝘐𝘧 𝘠𝘰𝘶 𝘞𝘢𝘯𝘵 𝘌𝘹𝘢𝘤𝘵 𝘳𝘦𝘢𝘴𝘰𝘯 𝘊𝘰𝘯𝘵𝘢𝘤𝘵 𝘖𝘸𝘯𝘦𝘳 -- @Unavailable4allTime<b>')
             await asyncio.sleep(10)
             await k.delete()
 
