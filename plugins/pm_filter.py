@@ -120,14 +120,14 @@ async def next_page(bot, query):
 async def advantage_spoll_choker(bot, query):
     _, user, movie_ = query.data.split('#')
     if int(user) != 0 and query.from_user.id != int(user):
-        return await query.answer("😇 നല്ല തീരുമാനം ആയിരുന്നു പക്ഷെ നടക്കില്ല, സ്വന്തമായി സെർച്ച് ചെയ്‌ത് എടുക്കൂ.", show_alert=True)
+        return await query.answer("😁 𝗛𝗲𝘆 𝗙𝗿𝗶𝗲𝗻𝗱,𝗣𝗹𝗲𝗮𝘀𝗲 𝗦𝗲𝗮𝗿𝗰𝗵 𝗬𝗼𝘂𝗿𝘀𝗲𝗹𝗳.", show_alert=True)
     if movie_ == "close_spellcheck":
         return await query.message.delete()
     movies = SPELL_CHECK.get(query.message.reply_to_message.id)
     if not movies:
-        return await query.answer("You are clicking on an old button which is expired.", show_alert=True)
+        return await query.answer("𝐋𝐢𝐧𝐤 𝐄𝐱𝐩𝐢𝐫𝐞𝐝 𝐊𝐢𝐧𝐝𝐥𝐲 𝐏𝐥𝐞𝐚𝐬𝐞 𝐒𝐞𝐚𝐫𝐜𝐡 𝐀𝐠𝐚𝐢𝐧 🙂.", show_alert=True)
     movie = movies[(int(movie_))]
-    await query.answer('Checking for Movie in database...')
+    await query.answer('𝙲𝙷𝙴𝙲𝙺𝙸𝙽𝙶 𝙵𝙸𝙻𝙴 𝙾𝙽 𝙼𝚈 𝙳𝙰𝚃𝙰𝙱𝙰𝚂𝙴...//')
     k = await manual_filters(bot, query.message, text=movie)
     if k == False:
         files, offset, total_results = await get_search_results(movie, offset=0, filter=True)
@@ -135,8 +135,7 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            
-       k = await query.message.edit('<b>ഈ മൂവി എന്റെ ഡാറ്റാബേസിൽ ലഭ്യമല്ല,..\n<b>══════◄••❀••►═════\n<b>𝙋𝙤𝙨𝙨𝙞𝙗𝙡𝙚 𝘾𝙖𝙪𝙨𝙚𝙨;\n<b>●𝘐𝘵 𝘮𝘢𝘺 𝘣𝘦 𝘢 𝘮𝘰𝘷𝘪𝘦 𝘵𝘩𝘢𝘵 𝘪𝘴 𝘯𝘰𝘵 𝘦𝘷𝘦𝘯 𝘳𝘦𝘭𝘦𝘢𝘴𝘦𝘥,\n<b>●𝘛𝘩𝘦 𝘮𝘰𝘷𝘪𝘦 𝘩𝘢𝘴 𝘣𝘦𝘦𝘯 𝘰𝘯𝘭𝘺 𝘳𝘦𝘭𝘦𝘢𝘴𝘦𝘥 𝘪𝘯 𝘵𝘩𝘦𝘢𝘵𝘦𝘳𝘴 𝘢𝘯𝘥 𝘯𝘰𝘵 𝘪𝘯 𝘖𝘛𝘛 𝘱𝘭𝘢𝘵𝘧𝘰𝘳𝘮𝘴,\n<b>●𝘙𝘢𝘳𝘦 𝘰𝘳 𝘝𝘦𝘳𝘺 𝘖𝘭𝘥 𝘔𝘰𝘷𝘪𝘦𝘴,\n\n<b>𝘐𝘧 𝘠𝘰𝘶 𝘞𝘢𝘯𝘵 𝘌𝘹𝘢𝘤𝘵 𝘳𝘦𝘢𝘴𝘰𝘯 𝘊𝘰𝘯𝘵𝘢𝘤𝘵 𝘖𝘸𝘯𝘦𝘳 -- @Unavailable4allTime<b>')
+            k = await query.message.edit('𝚃𝙷𝙸𝚂 𝙼𝙾𝚅𝙸𝙴 I𝚂 𝙽𝙾𝚃 𝚈𝙴𝚃 𝚁𝙴𝙻𝙴𝙰𝚂𝙴𝙳 𝙾𝚁 𝙰𝙳𝙳𝙴𝙳 𝚃𝙾 𝙳𝙰𝚃𝚂𝙱𝙰𝚂𝙴 💌')
             await asyncio.sleep(10)
             await k.delete()
 
