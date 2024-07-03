@@ -22,7 +22,7 @@ async def save_group(bot, message):
         if message.chat.id in temp.BANNED_CHATS:
             # Inspired from a boat of a banana tree
             buttons = [[
-                InlineKeyboardButton('Support', url=f'https://t.me/{SUPPORT_CHAT}')
+                InlineKeyboardButton('𝘖𝘸𝘯𝘦𝘳', url=f'https://t.me/{SUPPORT_CHAT}')
             ]]
             reply_markup=InlineKeyboardMarkup(buttons)
             k = await message.reply(
@@ -38,7 +38,7 @@ async def save_group(bot, message):
             return
         buttons = [[
             InlineKeyboardButton('ℹ️ Help', url=f"https://t.me/{temp.U_NAME}?start=help"),
-            InlineKeyboardButton('📢 Updates', url='https://t.me/TeamEvamaria')
+            InlineKeyboardButton('മുതലാളി', url='https://t.me/Unavailable4allTime')
         ]]
         reply_markup=InlineKeyboardMarkup(buttons)
         await message.reply_text(
@@ -53,7 +53,7 @@ async def save_group(bot, message):
                         await (temp.MELCOW['welcome']).delete()
                     except:
                         pass
-                temp.MELCOW['welcome'] = await message.reply(f"<b>Hey , {u.mention}, Welcome to {message.chat.title}</b>")
+                temp.MELCOW['welcome'] = await message.reply(f"<b>👋𝘏𝘦𝘺 {u.mention}, 𝘞𝘦𝘭𝘤𝘰𝘮𝘦 𝘛𝘰 {message.chat.title} അങ്ങനെ അവസാനം നിങ്ങൾ എത്തേണ്ട സ്ഥലത്ത് എത്തി😸,ഇവിടെ നിങ്ങൾക്ക് വേണ്ട എല്ലാ സിനിമയും കിട്ടും, അങ്ങനെ കിട്ടുന്നില്ലെങ്കിൽ മുതലാളിയോട് പറഞ്ഞാൽ മതി...<a href=https://t.me/Unavailable4allTime>♡മുതലാളി♡</a></b></b>")
 
 
 @Client.on_message(filters.command('leave') & filters.user(ADMINS))
