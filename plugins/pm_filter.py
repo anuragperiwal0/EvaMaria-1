@@ -158,13 +158,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     title = chat.title
                 except:
                     await query.message.edit_text("Make sure I'm present in your group!!", quote=True)
-                    return await query.answer('Piracy Is Crime')
+                    return await query.answer('എന്ത് നോക്കുന്നെ😼')
             else:
                 await query.message.edit_text(
                     "I'm not connected to any groups!\nCheck /connections or connect to any groups",
                     quote=True
                 )
-                return await query.answer('Piracy Is Crime')
+                return await query.answer('എന്ത് നോക്കുന്നെ😼')
 
         elif chat_type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
             grp_id = query.message.chat.id
@@ -196,7 +196,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 except:
                     pass
             else:
-                await query.answer("That's not for you!!", show_alert=True)
+                await query.answer("മറ്റുള്ളവരുടെ കാര്യങ്ങളിൽ വന്നു തൊടാതെ ഇരിക്ക്😷", show_alert=True)
     elif "groupcb" in query.data:
         await query.answer()
 
@@ -225,7 +225,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=keyboard,
             parse_mode=enums.ParseMode.MARKDOWN
         )
-        return await query.answer('Piracy Is Crime')
+        return await query.answer('എന്ത് നോക്കുന്നെ😼')
     elif "connectcb" in query.data:
         await query.answer()
 
@@ -246,7 +246,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             )
         else:
             await query.message.edit_text('Some error occurred!!', parse_mode=enums.ParseMode.MARKDOWN)
-        return await query.answer('Piracy Is Crime')
+        return await query.answer('എന്ത് നോക്കുന്നെ😼')
     elif "disconnect" in query.data:
         await query.answer()
 
@@ -269,7 +269,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f"Some error occurred!!",
                 parse_mode=enums.ParseMode.MARKDOWN
             )
-        return await query.answer('Piracy Is Crime')
+        return await query.answer('എന്ത് നോക്കുന്നെ😼')
     elif "deletecb" in query.data:
         await query.answer()
 
@@ -287,7 +287,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f"Some error occurred!!",
                 parse_mode=enums.ParseMode.MARKDOWN
             )
-        return await query.answer('Piracy Is Crime')
+        return await query.answer('എന്ത് നോക്കുന്നെ😼')
     elif query.data == "backcb":
         await query.answer()
 
@@ -298,7 +298,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.message.edit_text(
                 "There are no active connections!! Connect to some groups first.",
             )
-            return await query.answer('Piracy Is Crime')
+            return await query.answer('എന്ത് നോക്കുന്നെ😼')
         buttons = []
         for groupid in groupids:
             try:
@@ -374,12 +374,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
     elif query.data.startswith("checksub"):
         if AUTH_CHANNEL and not await is_subscribed(client, query):
-            await query.answer("I Like Your Smartness, But Don't Be Oversmart 😒", show_alert=True)
+            await query.answer("നിങ്ങളുടെ ബുദ്ധി കൊള്ളാം,പക്ഷെ അത് എന്റെ അടുത്ത് വേണ്ട😹,ജോയിൻ ആകാതെ ഒന്നും നടക്കില്ല😇", show_alert=True)
             return
         ident, file_id = query.data.split("#")
         files_ = await get_file_details(file_id)
         if not files_:
-            return await query.answer('No such file exist.')
+            return await query.answer('𝘉𝘶𝘵𝘵𝘰𝘯 𝘯𝘰𝘵 𝘸𝘰𝘳𝘬𝘪𝘯𝘨!. 𝘗𝘭𝘦𝘢𝘴𝘦 𝘎𝘰 𝘵𝘰 𝘨𝘳𝘰𝘶𝘱 𝘢𝘯𝘥 𝘛𝘳𝘺 𝘈𝘨𝘢𝘪𝘯🙂...')
         files = files_[0]
         title = files.file_name
         size = get_size(files.file_size)
@@ -405,10 +405,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer()
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+            InlineKeyboardButton('𝙉𝙀𝙒𝙂𝙀𝙉 𝘾𝙄𝙉𝙀𝙈𝘼𝙕𝙕𝙕™', url=f'https://t.me/newgen_cinemaazzz')
         ], [
             InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🤖 Updates', url='https://t.me/TeamEvamaria')
+            InlineKeyboardButton('⌖𝘖𝘸𝘯𝘦𝘳⌖', url='https://t.me/Unavailable4allTime')
         ], [
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
             InlineKeyboardButton('😊 About', callback_data='about')
@@ -439,8 +439,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('🤖 Updates', url='https://t.me/TeamEvamaria'),
-            InlineKeyboardButton('♥️ Source', callback_data='source')
+            InlineKeyboardButton('⌖𝘖𝘸𝘯𝘦𝘳⌖', url='https://t.me/Unavailable4allTime'),
+            InlineKeyboardButton('Source', callback_data='source')
         ], [
             InlineKeyboardButton('🏠 Home', callback_data='start'),
             InlineKeyboardButton('🔐 Close', callback_data='close_data')
